@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Admin avec grid layout</title>
+</head>
+<body>
+	<section class="manav">
+		<a href="#" class="cross"><i class="fas fa-times"></i></a>
+		<div><h3><i class="fas fa-home"></i> Tableau de bord</h3></div>
+		<div><h3><i class="fas fa-briefcase"></i> Offre de mission</h3></div>
+		<div><h3><i class="fas fa-people-arrows"></i> Annuaire des membres</h3></div>
+		<div><h3><i class="fas fa-globe"></i> Les communautés</h3></div>
+		<div>
+			<h3><i class="fas fa-sort-up"></i> Projet</h3>
+			<nav>
+				<a href="#">Air France</a>
+				<a href="#">Société Générale</a>
+				<a href="#">Engie</a>
+				<a href="#">Greenpeace</a>
+			</nav>
+		</div>
+		<div>
+			<h3><i class="fas fa-sort-up"></i> Thémes</h3>
+			<nav>
+				<a href="#"># Aide</a>
+				<a href="#"># Sécurité</a>
+				<a href="#"># Agora</a>
+				<a href="#"># Musique</a>
+				<a href="#"># Info</a>
+				<a href="#"># Wordl conquest</a>
+			</nav>
+		</div>
+		<div>
+			<h3><i class="fas fa-sort-up"></i> Messages</h3>
+			<nav>
+				<a href="#">Ice-T</a>
+				<a href="#">JCDV</a>
+				<a href="#">Dieu</a>
+				<a href="#">Bruce Lee</a>
+				<a href="#">Jean-louis David</a>
+				<a href="#">Lil Peep</a>
+				<a href="#">Denis Brognard</a>
+				<a href="#">Joey Starr</a>
+			</nav>
+		</div>
+	</section>
+	<header class="flex">
+		<figure><img src="img/logo.png" alt="logo"></figure>
+		<nav class="flex">
+			<a href="#" class="flex"><i class="far fa-bell"></i></a>
+			<a href="#"><img src="img/tete.jpg" alt="client"><i class="fas fa-chevron-down"></i></a>
+		</nav>
+	</header>
+	<main>
+		<h1>Les communautés</h1>
+		<form>
+			<input type="text" name="" placeholder="Rechercher par nom">
+			<button><i class="far fa-arrow-alt-circle-right"></i> Rechercher</button>
+		</form>
+		<section class="flex">
+			<article>
+				<figure><img src="img/logo2.png" alt="logo happy dev"></figure>
+				<h2>Happy Dev Paris</h2>
+				<p>Le collectif locomotive du réseau Happy Dev</p>
+				<p><i class="fas fa-users"></i> 324 membres</p>
+			</article>
+			<article>
+				<figure><img src="img/logo2.png" alt="logo happy dev"></figure>
+				<h2>Happy Dev Paris</h2>
+				<p>Le collectif locomotive du réseau Happy Dev</p>
+				<p><i class="fas fa-users"></i> 324 membres</p>
+			</article>
+			<article>
+				<figure><img src="img/logo2.png" alt="logo happy dev"></figure>
+				<h2>Happy Dev Paris</h2>
+				<p>Le collectif locomotive du réseau Happy Dev</p>
+				<p><i class="fas fa-users"></i> 324 membres</p>
+			</article>
+			<article>
+				<figure><img src="img/logo2.png" alt="logo happy dev"></figure>
+				<h2>Happy Dev Paris</h2>
+				<p>Le collectif locomotive du réseau Happy Dev</p>
+				<p><i class="fas fa-users"></i> 324 membres</p>
+			</article>
+			<article>
+				<figure><img src="img/logo2.png" alt="logo happy dev"></figure>
+				<h2>Happy Dev Paris</h2>
+				<p>Le collectif locomotive du réseau Happy Dev</p>
+				<p><i class="fas fa-users"></i> 324 membres</p>
+			</article>
+			<article>
+				<figure><img src="img/logo2.png" alt="logo happy dev"></figure>
+				<h2>Happy Dev Paris</h2>
+				<p>Le collectif locomotive du réseau Happy Dev</p>
+				<p><i class="fas fa-users"></i> 324 membres</p>
+			</article>
+			<nav>
+				<a href="#" class="next-prev"><i class="fas fa-arrow-circle-left"></i></a>
+				<a href="#" class="active">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">...</a>
+				<a href="#" class="next-prev"><i class="fas fa-arrow-circle-right"></i></a>
+			</nav>
+		</section>
+	</main>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".cross").click(function(){
+    $(".manav").toggleClass("active");
+  });
+});
+</script>
+</html>

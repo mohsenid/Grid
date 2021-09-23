@@ -1,0 +1,374 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX FIN RESET XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+:root {
+    --clr_bleu: #2e3f57;
+    --clr_vert: #00e3b4;
+    --clr_blanc: #ffffff;
+    --clr_gris: #a3a3a3;
+}
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX FIN VARIABLES XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+html {
+    font-size: 62.5%; /* definition du rem 1rem=10px*/
+    box-sizing: border-box; /* redefinition du modèle de boite*/
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s all cubic-bezier(1, .08, .22, .96);
+}
+
+/* ---- Mise en place du layout via grid ---- */
+
+body {
+  display: grid;
+  grid-template-columns: 14.5vw 84.4vw;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav header"
+    "nav main";
+}
+body>section{
+    grid-area: nav;
+    background: var(--clr_bleu);
+    color: var(--clr_blanc);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 2rem 0 0 0;
+    overflow: scroll;
+}
+body>header{
+    grid-area: header;
+    box-shadow: 0 4px 3px rgba(0,0,0,.15)
+}
+body>main{
+    grid-area: main;
+    padding: 1.5rem;
+    background: #f6f6f6;
+    overflow: auto;
+}
+/* ---- Fin du layout via grid ---- */
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex_start {
+    justify-content: flex-start;
+}
+
+.flex_end {
+    justify-content: flex-end;
+}
+
+.flex_center {
+    justify-content: center;
+}
+
+.flex_verti {
+    flex-direction: column;
+    align-content: space-between;
+}
+
+/* scrollbar styling non-standard version */
+body section::-webkit-scrollbar {
+    width: .5rem;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+body section::-webkit-scrollbar-thumb {
+    background: var(--clr_blanc);
+    border-radius: 20px;
+}
+
+/* scrollbar styling standard version */
+body section {
+    scrollbar-color: var(--clr_blanc) rgba(255, 255, 255, 0);
+    scrollbar-width: thin;
+}
+
+/*XXXXXXXXXXXXXX FIN SCROLLBAR XXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX Header XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+header img{
+    margin: 1rem 1rem 0 3rem;
+}
+header nav a{
+    align-content: center;
+}
+header nav a i{
+    transition: .3s all ease;
+}
+header nav a:hover i{
+    color: var(--clr_vert);
+}
+header nav img{
+    border-radius: 50%;
+    width: 20%;
+    min-width: 30px;
+    transition: all .4s ease-in;
+}
+header nav img:hover{
+    transform: scale(1.15);
+}
+header nav.flex i{
+    font-size: 1.9rem;
+    color: var(--clr_bleu);
+    vertical-align: middle;
+    display: inline-block;
+}
+header nav img+i{
+    margin-bottom: 2rem;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX Main XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+main h1{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--clr_bleu);
+    margin: 1%;
+}
+main input{
+    border:1px solid rgba(0,255,0,0);
+    margin: 1%;
+    padding: 1rem;
+    width: 30%;
+    outline: none;
+    transition: .6s all ease-in;
+}
+main input:focus{
+    border:1px solid rgba(0,227,180,1);
+}
+main button:hover{
+    color: rgba(255,255,255,1);
+    
+    border:1px solid rgba(255,255,255,1);
+    background: var(--clr_vert);
+    
+}
+main button{
+    border-radius: 20px;
+    color: var(--clr_vert);
+    border:1px solid var(--clr_vert);
+    background: rgba(255,255,255,0);
+    padding: 0.5rem;
+    transition: .4s ease all;
+}
+main h2{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--clr_bleu);
+    margin: 1%;
+}
+main p{
+     font-size: 1.4rem;
+    color: var(--clr_gris);
+    margin: 2rem 0;
+}
+main article i{
+    color: var(--clr_vert);
+}
+main article{
+    width: 30%;
+    border: 1px solid rgba(0,0,0,.25);
+    box-shadow: 2px 2px 3px rgba(0,0,0,.2);
+    text-align: center;
+    margin: 1.65%;
+    border-radius: 10px;
+    padding: 1.5rem 0;
+    background: var(--clr_blanc);
+    transition: .4s ease all;
+}
+main article:hover{
+    box-shadow: 6px 6px 5px rgba(0,0,0,.1);
+}
+main article figure{
+    border-bottom: 1px solid var(--clr_gris);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+/*--------- Pagination ----------*/
+main section nav{
+    width: auto;
+    margin: 2rem auto 0 auto;
+}
+main nav a{
+    font-size: 2rem;
+    color: var(--clr_gris);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50%;
+    background:rgba(255,0,85,0);
+}
+main nav a:not(.next-prev):hover,main nav a.active{
+    color: var(--clr_blanc);
+    background:rgba(255,0,85,1);
+}
+main nav a:hover i{
+    color: var(--clr_vert);
+    background:rgba(255,0,85,0);
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX Section Laterale XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+body>section>a{
+    position: absolute;
+    right: 0;
+    top : 3rem;
+    display: none;
+}
+body>section nav a{
+    color: var(--clr_blanc);
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: block;
+    padding: 1.5rem .5rem 1.5rem 2.5rem;
+}
+body>section a:hover{
+    color: var(--clr_vert);
+    letter-spacing: .05rem;
+}
+body>section h3{
+    color: var(--clr_blanc);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-top: 1px solid var(--clr_gris);
+    border-bottom: 1px solid var(--clr_gris);
+    padding: 1.5rem .5rem;
+    transition: .5s all ease-in;
+}
+body>section h3:hover{
+    color: var(--clr_bleu);
+    background:var(--clr_vert);
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX RWD XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+@media screen and (max-width: 1000px) {
+    body>section>a{
+        display: block;
+    font-size: 3rem;
+    color: var(--clr_blanc);
+    background: var(--clr_bleu);
+    border-radius: 0 10px 10px 0;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: auto;
+    padding: 1rem;
+    z-index: 1000000000;
+    transition:.5s ease-in all
+    }
+    body{
+        display: block;
+    }
+    body>section{
+    width: 60vw;
+    left: -60vw;
+    position: absolute;
+    transition:.5s ease-in all;
+    }
+    body>section.active{
+       left: 0; 
+    }
+    body>section.active a{
+       left: 59vw; 
+    }
+    header, main {
+        width: 100vw;
+    }
+    main h1{
+        margin-top: 4%;
+    }
+}
+@media screen and (max-width: 750px) {
+    main article{
+        width: 46%;
+    }   
+}
+@media screen and (max-width: 550px) {
+    main article{
+        width: 100%;
+    }   
+    header figure{
+        width: 30%;
+    }
+    main input{
+        width: 66%;
+    }
+}
